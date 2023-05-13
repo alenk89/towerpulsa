@@ -177,7 +177,7 @@ function tampil_produk(kategori, ket) {
                         </div>
                         <div class="col-7">
                             <div class="ui-produk">
-                                <span id="`+ id_produk + `" style="font-size=15px;" class="text-primary fs-16">
+                                <span id="`+ id_produk + `"class="text-primary fs-15">
                                         <b>` + nama + `</b>
                                     </span>
                                     <span class="text-dark">
@@ -186,7 +186,7 @@ function tampil_produk(kategori, ket) {
                                 </div>
                             </div>
                         <div class="col-3 d-flex" style="justify-content: flex-end;">
-                            <span class="btn btn-dim btn-md btn-outline-primary text-left fs-16">
+                            <span class="btn btn-dim btn-sm btn-outline-primary text-left fs-16">
                                 <strong>`+ harga + `</strong>
                             </span>
                         </div>
