@@ -1,6 +1,4 @@
-var url = "https://bankfilegsm.my.id/api/produk_pulsa.php?kategori=";
-var link = "https://pasargsm.jualan.me/";
-var aktivasi = "kunciserver";
+
 var keywoard = document.getElementById('player');
 var load = document.getElementById('load');
 var oprator = document.getElementById('nickname');
