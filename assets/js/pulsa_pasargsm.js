@@ -1,243 +1,227 @@
+var baseUrl = 'https://api.nielz.my.id/api/v2/fitur/bo?';
 
-var keywoard = document.getElementById('player');
-var load = document.getElementById('load');
-var oprator = document.getElementById('nickname');
-var salah = document.getElementById('tidak_valid');
-var nick_tampil = document.getElementById('nick');
-var validasi = "";
-
-
-function ubah() {
-    var x = keywoard.value.substr(0, 3);
-    if (x == "+62") {
-        keywoard.value = keywoard.value.replace('+62', '0')
-    }
-    gas()
-}
-
-function gas() {
-
-    if (keywoard.value.length < 6 || keywoard.value.length > 11) {
-        var x = keywoard.value.substr(0, 4);
-        var y = keywoard.value.substr(4, 1);
-
-        if (keywoard.value.length < 4) {
-            keywoard.classList.add('is-invalid');
-            keywoard.classList.remove('is-valid');
-            salah.innerText = "Masukan 6-13 Digit Nomor Handphone";
-            $('#produk_diamond').empty();
-            $('#produk').empty();
-            $('#rol').append(`Ketikan Nomor Tujuan`)
-            $('#produk').append(`<option id="" value="">Pilih Produk</option>`);
-            // telkomsel
-        } else if (x == 0811 || x == 0812 || x == 0813 || x == 0821 || x == 0822 || x == 0852 || x == 0853 || x == 0823 || x == 0851) {
-            if (x == 0851 && y == 5 || x == 0851 && y == 6 || x == 0851 && y == 7) {
-
-                keywoard.classList.remove('is-invalid');
-                keywoard.classList.add('is-valid');
-                oprator.innerHTML =
-                    `
-                    <img src='https://i.ibb.co/GWL8Ctp/byu.png' width='25' height='25'>
-                    <span class='byu'>
-                        <strong>ByU</strong>
-                    </span >
-                `
-                $('#produk').empty();
-                $('#produk').append(`
-    <option id="" value="">Pulsa By U</option>
-
-    `)
-                tampil_produk("", "");
-
-            } else {
-                keywoard.classList.remove('is-invalid');
-                keywoard.classList.add('is-valid');
-                oprator.innerHTML =
-                    `
-                    <img src='https://i.ibb.co/sg0G3ZC/tsel.png' width='25' height='25'>
-                    <span class='tsel'><strong>TELKOMSEL</strong></span >
-                `
-                $('#produk').empty();
-                $('#produk').append(`
-    <option id="" value="">Telkomsel</option>
-    `)
-                tampil_produk("pulsa-reguler-267083", "1");
-            }
-            // Indosat
-        } else if (x == 0814 || x == 0815 || x == 0816 || x == 0855 || x == 0856 || x == 0857 || x == 0858) {
-            keywoard.classList.remove('is-invalid');
-            keywoard.classList.add('is-valid');
-            oprator.innerHTML =
-                `
-                    <img src='https://i.ibb.co/JqgkRSQ/indosat.png' width='25' height='25'>
-                    <span class='indosat'><strong>INDOSAT</strong></span >
-                `
-            $('#produk').empty();
-            $('#produk').append(`
-    <option id="" value="">Pulsa Indosat</option>
-
-    `)
-            tampil_produk("pulsa-indosat-430637", "2");
-        }
-        // Tri
-        else if (x == 0895 || x == 0896 || x == 0897 || x == 0898 || x == 0899) {
-            keywoard.classList.remove('is-invalid');
-            keywoard.classList.add('is-valid');
-            oprator.innerHTML =
-                `
-                    <img src='https://i.ibb.co/ccmXGsx/three.png' width='25' height='25'>
-                    <span class='tree'><strong>THREE</strong></span >
-                `
-            $('#produk').empty();
-            $('#produk').append(`
-    <option id="" value="">Pulsa Three</option>
-
-    `)
-            tampil_produk("pulsa-tree-434459", "3");
-        }
-        // Axis
-        else if (x == 0838 || x == 0831 || x == 0832 || x == 0833) {
-            keywoard.classList.remove('is-invalid');
-            keywoard.classList.add('is-valid');
-            oprator.innerHTML =
-                `
-                    <img src='https://i.ibb.co/Tc88ZDZ/axis.png' width='25' height='25'>
-                    <span class='axis'><strong>AXIS</strong></span >
-                `
-            $('#produk').empty();
-            $('#produk').append(`
-    <option id="" value="">Pulsa Axis</option>
-
-    `)
-            tampil_produk("pulsa-axis-434458", "4");
-        }
-        // XL
-        else if (x == 0818 || x == 0817 || x == 0819 || x == 0859 || x == 0877 || x == 0878) {
-            keywoard.classList.remove('is-invalid');
-            keywoard.classList.add('is-valid');
-            oprator.innerHTML =
-                `
-                    <img src='https://i.ibb.co/jLMTpNM/xl.png' width='25' height='25'>
-                    <span class='xl'><strong>XL AXIATA</strong></span >
-                `
-            $('#produk').empty();
-            $('#produk').append(`
-    <option id="" value="">Pulsa XL</option>
-
-    `)
-            tampil_produk("pulsa-xl-430635", "5");
-        }
-        // Smartfreen
-        else if (x == 0881 || x == 0882 || x == 0883 || x == 0884 || x == 0885 || x == 0886 || x == 0887 || x == 0888 || x == 0889) {
-            keywoard.classList.remove('is-invalid');
-            keywoard.classList.add('is-valid');
-            oprator.innerHTML =
-                `
-                    <img src='https://i.ibb.co/myjJkY7/smartfreen.png' width='25' height='25'>
-                    <span class='smartfreen'><strong>SMARTFREEN</strong></span >
-                `
-            $('#produk').empty();
-            $('#produk').append(`
-    <option id="" value="">Pulsa Smartfreen</option>
-
-    `)
-            tampil_produk("#", "6");
-        }
-    }
-};
-
-// klik diamond dan member
-function pindah(id, togle, produk1, produk2) {
-    var tombol = document.getElementById(id);
-    var togle = document.getElementById(togle);
-    var produk1 = document.getElementById(produk1);
-    var produk2 = document.getElementById(produk2);
-    tombol.classList.add('klik');
-    togle.classList.remove('klik');
-    produk2.classList.add('d-none');
-    produk1.classList.remove('d-none')
-}
-
-// Tampilan Produk
-function tampil_produk(kategori, ket) {
-    Loading();
-    $.getJSON(url + kategori + '&ket=' + ket + '&link=' + link + '&token=' + aktivasi, function (data) {
-
-        if (data != null) {
-            $('#produk_diamond').empty();
-            for (let i = 0; i < data.length; i++) {
-                var nama = data[i]['Judul'];
-                var id_produk = data[i]['link'];
-                var harga = data[i]['harga'];
-                $('#produk_diamond').append(`
-                <div class="mb-1x" onclick="klik(\'` + harga + `\',\'` + nama + `\',\'` + id_produk + `\')">
-                    <div class="card-1 d-flex align-items-center alert alert-pro alert-primary">
-                        <div class="col-2 img-produk">
-                            <img src="https://i.ibb.co/yS3pNYd/simcard.png" alt="simcard" border="0">
-                        </div>
-                        <div class="col-7">
-                            <div class="ui-produk">
-                                <span id="`+ id_produk + `"class="text-primary fs-15">
-                                        <b>` + nama + `</b>
-                                    </span>
-                                    <span class="text-dark">
-                                        Pulsa Reguler
-                                    </span>
-                                </div>
-                            </div>
-                        <div class="col-3 d-flex" style="justify-content: flex-end;">
-                            <span class="btn btn-dim btn-sm btn-outline-primary text-left fs-16">
-                                <strong>`+ harga + `</strong>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-    `)
-            }
-
-        } else {
-            $('#produk_diamond').empty();
-            $('#produk_diamond').append(` <div class="d-flex justify-content-center flex-column align-items-center" style="margin-top:30%; margin-bottom: 30%;" id="rol">
-            <img src="https://i.ibb.co/Nx97GcY/box.png" alt="logo-new" class="img-logo opacity-50" width="150">
-                    <h4 class="card-title mt-1">
-                        Produk Belum tersedia
-                    </h4>
-            </div>
-            `)
-        }
-
-    });
-
-}
-
-function klik(harga, nama, value) {
-    var catatan = document.getElementById("player").value;
-    var topup = document.getElementById('produk');
-    ss = topup.options[topup.selectedIndex].innerText;
-    if (catatan.length < 8) {
-        keywoard.classList.add('is-invalid');
+function getData(_0x5deax3) {
+    cekz = '200';
+    $('#dataAPI')['html'](loads);
+    if (_0x5deax3 == 'nosalah') {
+        $('#img-operator')['hide']();
+        $('#box-operator')['hide']();
+        $('#box-pilihan')['hide']();
+        $('#dataAPI')['html'](noSalah);
+        $('#img-operator')['removeAttr']('height')
     } else {
-        document.getElementById('kl').click();
-        document.getElementById('nick').innerText = ss;
-        document.getElementById("id1").value = value;
-        document.getElementById("catatan").value = catatan;
-        document.getElementById("web").value = link;
-        document.getElementById("kode").value = aktivasi;
-        document.getElementById("player1").innerHTML = catatan;
-        document.getElementById('produkk').innerText = nama;
-        document.getElementById('hargaa').innerText = harga;
-        document.getElementById('total').innerText = harga;
+        $['ajax']({
+            type: 'POST',
+            url: baseUrl,
+            data: {
+                aktivasi: aktivasi,
+                param: 'produk',
+                url: `${''}${''}${''}${''}${''}${''}${''}${urlToko}${''}${''}${''}${'/kategori/'}${''}${''}${''}${_0x5deax3}${''}${''}${''}${''}${''}${''}${''}`
+            },
+            dataType: 'JSON',
+            success: function(_0x5deax4) {
+                if (_0x5deax4['data'] == null) {
+                    $('#box-pilihan')['css']('pointer-events', '');
+                    $('.img-contact')['css']('pointer-events', '');
+                    $('#dataAPI')['html'](produkNone)
+                } else {
+                    $('#box-pilihan')['css']('pointer-events', '');
+                    $('.img-contact')['css']('pointer-events', '');
+                    $('#dataAPI')['html'](`${''}${''}${''}${'<div id="dataProduk" class="animate__animated animate__fadeIn row"></div>'}${''}${''}${''}`);
+                    loopProduk(_0x5deax4['data'])
+                }
+            }
+        })
     }
-};
+}
 
-function Loading() {
-    $('#produk_diamond').empty();
-    $('#produk_diamond').append(`
-    <div class="d-flex justify-content-center " style="margin-top:50%;margin-bottom:50%" id="rol">
-        <div class="loader" role="status">
-            <img src="https://i.ibb.co/d2dyYrw/wait.gif" alt="loading" style="width:120px" >
-        </div>
-    </div>
-    `)
+function showDetail(_0x5deax3, _0x5deax6, _0x5deax7) {
+    var _0x5deax8 = $('#nomoTel')['val']();
+    if (_0x5deax8['length'] < 10) {
+        _0x5deax8 = '<span class=\'text-danger\'>Nomor minimal 10 angka</span>';
+        $('#btls')['removeClass']('d-flex');
+        $('#btnBli')['hide']()
+    } else {
+        if (_0x5deax8['length'] > 15) {
+            _0x5deax8 = '<span class=\'text-danger\'>Nomor maksimal 15 angka</span>';
+            $('#btls')['removeClass']('d-flex');
+            $('#btnBli')['hide']()
+        } else {
+            $('#btls')['addClass']('d-flex');
+            $('#btnBli')['show']()
+        }
+    };
+    $['ajax']({
+        type: 'POST',
+        url: baseUrl,
+        data: {
+            aktivasi: aktivasi,
+            param: 'detail_produk',
+            url: _0x5deax7
+        },
+        dataType: 'JSON',
+        beforeSend: function() {
+            $('#prod')['html']('Loading...');
+            $('#numb')['html']('Loading...');
+            $('#desc')['html']('Loading...');
+            $('#prc')['html']('Loading...');
+            $('#btnBli')['removeAttr']('href')
+        },
+        success: function(_0x5deax4) {
+            $('#prod')['html'](_0x5deax3);
+            $('#numb')['html'](_0x5deax8);
+            $('#desc')['html'](_0x5deax4['data']);
+            $('#prc')['html'](_0x5deax6);
+            tombolBeli(_0x5deax7, _0x5deax8)
+        }
+    })
+}
+var nohpx = [];
+var nohpy = [];
+var cekz = '404';
+$('#nomoTel')['on']('input', function() {
+    var _0x5deax4 = $('#nomoTel')['val']();
+    if (_0x5deax4['length'] <= 3) {
+        clrAll();
+        nohpx[0] = '.';
+        nohpy[0] = '.';
+        cekz = '404'
+    } else {
+        if (_0x5deax4['length'] == 4 || _0x5deax4['length'] == 5) {
+            cekz = '404'
+        } else {
+            if (cekz == '404' && _0x5deax4['length'] >= 6) {
+                cekInputan()
+            }
+        }
+    }
+});
+$('#nomoTel')['on']('change', function() {
+    var _0x5deax4 = $('#nomoTel')['val']();
+    if (_0x5deax4['length'] <= 3) {
+        clrAll();
+        nohpx[0] = '.';
+        nohpy[0] = '.';
+        cekz = '404'
+    } else {
+        if (_0x5deax4['length'] >= 6) {
+            cekInputanKe2();
+            cekz = '200'
+        }
+    }
+});
+
+function cekInputan() {
+    var _0x5deax4 = $('#nomoTel')['val']();
+    var _0x5deax3 = _0x5deax4['replace'](/[^\d]/g, '');
+    var _0x5deax6 = cekStr(_0x5deax3)['substr'](0, 4);
+    var _0x5deax7 = cekStr(_0x5deax3)['substr'](0, 6);
+    var _0x5deax8 = cekStr(_0x5deax3);
+    $('#nomoTel')['val'](_0x5deax8);
+    if (_0x5deax6['length'] == 4 && nohpx[0] != _0x5deax6 || _0x5deax7['length'] == 6 && nohpy[0] != _0x5deax7) {
+        nohpx[0] = _0x5deax6;
+        nohpy[0] = _0x5deax7;
+        $('#box-pilihan')['css']('pointer-events', '');
+        $('.img-contact')['css']('pointer-events', '')
+    } else {};
+    cekNomorUlang(_0x5deax6, _0x5deax7)
+}
+
+function cekInputanKe2() {
+    var _0x5deax4 = $('#nomoTel')['val']();
+    var _0x5deax3 = _0x5deax4['replace'](/[^\d]/g, '');
+    var _0x5deax6 = cekStr(_0x5deax3)['substr'](0, 4);
+    var _0x5deax7 = cekStr(_0x5deax3)['substr'](0, 6);
+    var _0x5deax8 = cekStr(_0x5deax3);
+    $('#nomoTel')['val'](_0x5deax8);
+    if (_0x5deax6['length'] == 4 && nohpx[0] != _0x5deax6 || _0x5deax7['length'] == 6 && nohpy[0] != _0x5deax7) {
+        nohpx[0] = _0x5deax6;
+        nohpy[0] = _0x5deax7;
+        cekNomorUlang(nohpx[0], nohpy[0]);
+        $('#box-pilihan')['css']('pointer-events', 'none');
+        $('.img-contact')['css']('pointer-events', 'none')
+    } else {}
+}
+
+function cekStr(_0x5deax4) {
+    let _0x5deaxf;
+    if (_0x5deax4['substr'](0, 2) == '62') {
+        _0x5deaxf = '0' + _0x5deax4['substr'](2, 20);
+        return _0x5deaxf
+    } else {
+        if (_0x5deax4['substr'](0, 3) == '+62') {
+            _0x5deaxf = '0' + _0x5deax4['substr'](3, 20);
+            return _0x5deaxf
+        } else {
+            return _0x5deax4
+        }
+    }
+}
+
+function cekNomorUlang(_0x5deax11, _0x5deax12) {
+    let _0x5deax13, _0x5deax14;
+    $('#dataAPI')['html'](loads);
+    if (_0x5deax12 == '085154' || _0x5deax12 == '085155' || _0x5deax12 == '085156' || _0x5deax12 == '085157' || _0x5deax12 == '085158' || _0x5deax12 == '085159' || _0x5deax12 == '085160' || _0x5deax12 == '085161' || _0x5deax12 == '085162' || _0x5deax12 == '085163' || _0x5deax12 == '085171' || _0x5deax12 == '085172' || _0x5deax12 == '085173' || _0x5deax12 == '085174' || _0x5deax12 == '085175' || _0x5deax12 == '085176' || _0x5deax12 == '085177' || _0x5deax12 == '085178' || _0x5deax12 == '085179' || _0x5deax12 == '085180') {
+        loadOperator('By.U');
+        _0x5deax13 = urlKategori[0]['By.U']['reguler'];
+        _0x5deax14 = urlKategori[0]['By.U']['transfer']
+    } else {
+        if (_0x5deax11 == '0811' || _0x5deax11 == '0812' || _0x5deax11 == '0813' || _0x5deax11 == '0821' || _0x5deax11 == '0822' || _0x5deax11 == '0852' || _0x5deax11 == '0853' || _0x5deax11 == '0823' || _0x5deax11 == '0851') {
+            loadOperator('Telkomsel');
+            _0x5deax13 = urlKategori[0]['Telkomsel']['reguler'];
+            _0x5deax14 = urlKategori[0]['Telkomsel']['transfer']
+        } else {
+            if (_0x5deax11 == '0814' || _0x5deax11 == '0815' || _0x5deax11 == '0816' || _0x5deax11 == '0855' || _0x5deax11 == '0856' || _0x5deax11 == '0857' || _0x5deax11 == '0858') {
+                loadOperator('Indosat');
+                _0x5deax13 = urlKategori[0]['Indosat']['reguler'];
+                _0x5deax14 = urlKategori[0]['Indosat']['transfer']
+            } else {
+                if (_0x5deax11 == '0818' || _0x5deax11 == '0817' || _0x5deax11 == '0819' || _0x5deax11 == '0859' || _0x5deax11 == '0877' || _0x5deax11 == '0878') {
+                    loadOperator('XL Axiata');
+                    _0x5deax13 = urlKategori[0]['XL Axiata']['reguler'];
+                    _0x5deax14 = urlKategori[0]['XL Axiata']['transfer']
+                } else {
+                    if (_0x5deax11 == '0838' || _0x5deax11 == '0831' || _0x5deax11 == '0832' || _0x5deax11 == '0833') {
+                        loadOperator('Axis');
+                        _0x5deax13 = urlKategori[0]['Axis']['reguler'];
+                        _0x5deax14 = urlKategori[0]['Axis']['transfer']
+                    } else {
+                        if (_0x5deax11 == '0895' || _0x5deax11 == '0896' || _0x5deax11 == '0897' || _0x5deax11 == '0898' || _0x5deax11 == '0899') {
+                            loadOperator('Three');
+                            _0x5deax13 = urlKategori[0]['Three']['reguler'];
+                            _0x5deax14 = urlKategori[0]['Three']['transfer']
+                        } else {
+                            if (_0x5deax11 == '0881' || _0x5deax11 == '0882' || _0x5deax11 == '0883' || _0x5deax11 == '0884' || _0x5deax11 == '0885' || _0x5deax11 == '0886' || _0x5deax11 == '0887' || _0x5deax11 == '0888' || _0x5deax11 == '0889') {
+                                loadOperator('Smartfren');
+                                _0x5deax13 = urlKategori[0]['Smartfren']['reguler'];
+                                _0x5deax14 = urlKategori[0]['Smartfren']['transfer']
+                            } else {
+                                _0x5deax13 = 'nosalah';
+                                _0x5deax14 = 'nosalah'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
+    $('#reg')['off']('click');
+    $('#tf')['off']('click');
+    $('#reg')['on']('click', function() {
+        getData(_0x5deax13);
+        $('.btn-pulsa')['removeClass']('bg-pulsa-active');
+        $('#reg')['addClass']('bg-pulsa-active')
+    });
+    $('#tf')['on']('click', function() {
+        getData(_0x5deax14);
+        $('.btn-pulsa')['removeClass']('bg-pulsa-active');
+        $('#tf')['addClass']('bg-pulsa-active')
+    });
+    if ($('#reg')['hasClass']('bg-pulsa-active')) {
+        getData(_0x5deax13)
+    } else {
+        if ($('#tf')['hasClass']('bg-pulsa-active')) {
+            getData(_0x5deax14)
+        }
+    }
 }
