@@ -619,7 +619,7 @@ progress {
 }
 
 .blockquote-footer::before {
-    content: "— ";
+    content: "— ";
 }
 
 .img-fluid {
@@ -30769,7 +30769,7 @@ A VERTICAL event
 }
 
 .fc .fc-timegrid-slot:empty:before {
-    content: " ";
+    content: " ";
     /* make sure there's at least an empty space to create height for height syncing */
 }
 
@@ -30973,7 +30973,7 @@ A VERTICAL event
 }
 
 .fc-timegrid-event-condensed .fc-event-time:after {
-    content: " - ";
+    content: " - ";
     /* dash surrounded by non-breaking spaces */
 }
 
@@ -49957,14 +49957,8 @@ span.ripple {
     height: 160px;
 }
 
-@media (min-width: 576px) {
-    .hero-area--style-1 .hero-bg {
-        height: 240px;
-    }
-}
 
 .hero-area--style-1 .hero-bg img {
-    height: 100%;
     border-radius: 5px;
 }
 
