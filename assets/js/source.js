@@ -26,19 +26,16 @@
         }
         document.getElementById("poinku").innerText = rubah(document.getElementById("poinku").textContent);
 
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
+        const swiper = new Swiper('.sample-slider', {
+            loop: true,                         //loop
+            autoplay: {                         //autoplay
                 delay: 2500,
-                disableOnInteraction: false,
             },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
+            navigation: {                       //navigation(arrow)
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
+            },
+            pagination: {                       //pagination(dots)
+                el: '.swiper-pagination',
             },
         });
