@@ -25,17 +25,3 @@
             return ribuan;
         }
         document.getElementById("poinku").innerText = rubah(document.getElementById("poinku").textContent);
-
-        const swiper = new Swiper('.sample-slider', {
-            loop: true,                         //loop
-            autoplay: {                         //autoplay
-                delay: 2500,
-            },
-            navigation: {                       //navigation(arrow)
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {                       //pagination(dots)
-                el: '.swiper-pagination',
-            },
-        });
