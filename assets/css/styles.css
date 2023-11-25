@@ -9789,7 +9789,6 @@ fieldset:disabled .dual-listbox .dual-listbox__button,
 .bg-lighter,
 .dual-listbox .dual-listbox__item:hover {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-lighter-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
