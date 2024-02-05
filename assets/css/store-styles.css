@@ -1,44 +1,4 @@
-.bg-light {
-    --bs-bg-opacity: 1;
-}
-#searchProds {
-    width: 60px;
-    transition: width 0.5s ease;
-}
-#searchProds:focus {
-    width: 240px;
-}
-.logo-atas {
-    height: 40px;
-}
-.logo-order {
-    width: 100%;
-    float: left; /* margin-right: 8px;  margin-bottom: auto; */
-}
-.logo-order2 {
-    width: 100%;
-    float: left; /* margin-right: 8px;  margin-bottom: auto; */
-}
-.logo-order3 {
-    width: 100%;
-    float: left; /* margin-right: 8px;  margin-bottom: auto; */
-}
-.logo-bawah {
-    height: 60px;
-    float: left;
-    margin-right: 8px;
-    margin-bottom: auto;
-}
-.btn-orange {
-    color: #b19973;
-    background-color: #b19973 !important;
-    border-color: #b19973 !important;
-}
-.btn-primary {
-    color: #fff;
-    background-color: #b19973 !important;
-    border-color: #b19973 !important;
-}
+
 .child-box:hover {
     border: 1px solid #c9c9c993;
 } /* #child-box:hover {  border: 1px solid #fd7300;  color: #fd7300;  } */
@@ -232,10 +192,7 @@
     text-decoration: none;
     transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s;
 }
-.nav-link:focus,
-.nav-link:hover {
-    color: #c44d09;
-}
+
 .d-flex2-custom {
     background-color: white;
 }
@@ -259,23 +216,7 @@
     width: 103px;
     white-space: nowrap;
 }
-.card-title-publisher-wrap {
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    font-size: 11px;
-}
-.card-game-title {
-    margin-top: 2px;
-    font-weight: 500;
-    -webkit-line-clamp: 2;
-    height: 3em;
-}
-.card-game-publisher {
-    font-weight: 400;
-    color: #666;
-    font-size: 12px;
-    -webkit-line-clamp: 1;
-}
+
 .nav-tab {
     background-color: #b1997385;
     border-radius: 0.25rem;
@@ -312,9 +253,8 @@
 .list-group input[type="radio"] {
     display: none;
 }
-.btn-check:focus + .btn-primary,
-.btn-primary:focus,
-.btn-primary:hover {
+.btn-check:focus
+ {
     background-color: #b1997385;
     border-color: transparent;
     color: #fff;
