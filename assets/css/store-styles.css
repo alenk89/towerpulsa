@@ -3,8 +3,8 @@
     border: 1px solid #c9c9c993;
 } /* #child-box:hover {  border: 1px solid #fd7300;  color: #fd7300;  } */
 .button-action-payment li.active {
-    border: 1px solid #b19973;
-    background: #f9f9f9;
+    border: 1px solid #6576ff;
+    background: #6576ff26;
     filter: grayscale(0%);
 }
 .xxs {
@@ -23,13 +23,13 @@
     filter: grayscale(100%);
 }
 .button-action-payment input[type="radio"]:checked + .payment-item {
-    color: #b19973;
+    color: #6576ff;
 }
 .fa-angle-right:before {
-    color: #b19973;
+    color: #6576ff;
 }
 .strip-primary {
-    background-color: #b19973;
+    background-color: #6576ff;
     position: absolute;
     width: 60px;
     height: 5px;
@@ -135,15 +135,15 @@
     bottom: 140px;
     right: 10px;
     color: #fff;
-    background: #b19973;
+    background: #6576ff;
     border-radius: 10px;
     text-align: center;
     font-size: 30px;
     z-index: 99999;
 }
 .act-btn-top:hover {
-    background: #b1997385;
-    color: #b19973;
+    background: #6576ff85;
+    color: #6576ff;
 }
 .d-flex {
     display: -ms-flexbox !important;
@@ -159,14 +159,14 @@
 }
 .btn-topup {
     color: #fff3e2 !important;
-    background-color: #b19973 !important;
+    background-color: #6576ff !important;
     width: 90%;
     max-width: 100px;
 }
 .btn-topup:hover {
     color: #fff3e2 !important;
-    background-color: #b1997385 !important;
-    border-color: #b1997385;
+    background-color: #6576ff85 !important;
+    border-color: #6576ff85;
     width: 90%;
 }
 .rounded-img-buy {
@@ -183,7 +183,7 @@
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-    background-color: #b19973;
+    background-color: #6576ff;
     color: #fff;
 }
 .nav-link {
@@ -218,7 +218,7 @@
 }
 
 .nav-tab {
-    background-color: #b1997385;
+    background-color: #6576ff85;
     border-radius: 0.25rem;
     color: white !important;
 }
@@ -226,7 +226,7 @@
     color: white !important;
 }
 .nav-tab:hover {
-    background-color: #b1997385;
+    background-color: #6576ff85;
     border-radius: 0.25rem;
 }
 .horitab-scroll {
@@ -245,7 +245,7 @@
 }
 .shadows {
     cursor: pointer;
-    border: 1px solid #b19973 !important;
+    border: 1px solid #6576ff !important;
 }
 .list-group-item {
     user-select: none;
@@ -255,7 +255,7 @@
 }
 .btn-check:focus
  {
-    background-color: #b1997385;
+    background-color: #6576ff85;
     border-color: transparent;
     color: #fff;
 }
@@ -274,7 +274,7 @@
     margin-right: 1em;
 }
 .list-group input[type="radio"]:checked + .list-group-item {
-    background-color: #b1997385;
+    background-color: #6576ff85;
     color: #e1e1e4;
     font-size: 12px;
 }
