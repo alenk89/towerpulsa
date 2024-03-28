@@ -1,0 +1,240 @@
+
+        .toast-header {
+            background: red;
+        }
+
+        .toast {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
+        }
+
+
+        #inputNumber:hover,
+        #inputNumber:focus {
+            box-shadow: none;
+            background: transparent;
+            border: 1px solid #dbdfea;
+            /* color: black; */
+        }
+
+
+        i {
+            font-size: 12px;
+        }
+
+
+        .reguler-button,
+        .transfer-button,
+        .masaaktif-button,
+        .reguler-button:hover,
+        .transfer-button:hover {
+            background: #fff;
+            color: black;
+            font-size: 3vw;
+            border-radius: 15px;
+            border: none;
+            margin-bottom: 15px;
+            outline: none;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .product-item {
+            background: white;
+            padding: 5px;
+            border-radius: 7px;
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+
+        .name-product,
+        .name-price {
+            color: #181818 !important;
+            border: none;
+        }
+
+        .name-product {
+            font-weight: bold;
+            font-size: 13px;
+            margin: 0px;
+            width: 100%;
+        }
+
+        .name-price {
+            font-size: 12px;
+            font-weight: 500;
+            color: white !important;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            margin: 0px !important;
+            background: var(--subMain);
+            padding-right: 15px;
+            padding-left: 15px;
+            border-radius: 0px 7px 0px 7px;
+        }
+
+
+        .input-pack {
+            background: white;
+            padding: 14px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .img--produk {
+            width: 30px;
+            border-radius: 7px;
+            margin-right: 5px !important;
+        }
+
+        .name-diskon {
+            display: none;
+        }
+
+
+        .btn--form {
+            background: #f1f4f8;
+            border-radius: 0px 0px 15px 15px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            position: relative;
+            top: -5px;
+            z-index: 1;
+        }
+
+        .btn--form a {
+            font-size: 12px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn--form a:hover {
+            text-decoration: none;
+        }
+
+        .btn--form a img {
+            width: 15px;
+            margin-right: 5px;
+        }
+
+        #d--fish {
+            text-align: center;
+        }
+
+        #d--fish img {
+            margin-top: 10%;
+            width: 50% !important;
+        }
+
+        #d--fish p {
+            font-size: 13px;
+        }
+
+        .saved-number-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+            padding-top: 8px;
+            font-size: 13px;
+        }
+
+        .checkbox {
+            margin-left: 10px;
+            /* Adjust the margin as needed */
+        }
+
+        .card-body {
+            border: none;
+            overflow-y: scroll;
+            height: 100px;
+            margin-top: 5px;
+            padding: 0;
+            position: relative;
+            background: #f1f4f8;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .delete--list {
+            background: red;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            border: none;
+            margin-left: 10px;
+        }
+
+
+        .input-pack {
+            position: relative;
+        }
+
+        .scroll-indicator {
+            font-size: 10px;
+            color: gray;
+        }
+
+        #loadingSpinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fs-1 {
+            font-size: 28px;
+        }
+
+        .fs-2 {
+            font-size: 24px;
+        }
+
+        .fs-3 {
+            font-size: 20px;
+        }
+
+        .fs-4 {
+            font-size: 18px;
+        }
+
+        .fs-5 {
+            font-size: 14px;
+        }
+
+        .fs-6x {
+            font-size: 11px;
+        }
+
+        .fs-7 {
+            font-size: 9px;
+        }
+
+        .badge-custom {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            padding: 3px 7px;
+            border-radius: 0px 7px;
+        }
